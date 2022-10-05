@@ -15,7 +15,7 @@ function Spa() {
               }}
               >
        <div className="container" style={{padding: "20px"}}>
-        <Route path="/home" exact component={Home} />
+        <Route path="/" exact component={Home} />
         <Route path="/CreateAccount" component={CreateAccount} />        
         <Route path="/login" component={Login} />
         <Route path="/deposit" component={Deposit} />
