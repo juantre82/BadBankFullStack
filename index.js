@@ -1,40 +1,34 @@
 var express = require('express');
 var app     = express();
 var cors    = require('cors');
-var dal     = require('./dal.js');
-let mongodb =require('mongodb');
+let mongodb = require('mongodb');
+
 
 //require('dotenv').config();
 //console.log(process.env);
+
+var dal     = require('./dal.js');
 
 // used to serve static files from public directory
 app.use(express.static('public'));
 app.use(cors());
 
+app.use((req,res,next)=>{
+    console.log('Time:', Date.now())
+    next()
+})
+
 // create user account
-app.get('/account/create/:name/:email/:password', function (req, res) {
+app.post('/account/create/:name/:email/:password', function (req, res) { 
 
-    // check if account exists
-    dal.find(req.params.email).
-        then((users) => {
-
-            // if user exists, return error message
-            if(users.length > 0){
-                console.log('User already in exists');
-                res.send('User already in exists');    
-            }
-            else{
-                // else create user
+                //  create user
                 dal.create(req.params.name,req.params.email,req.params.password).
                     then((user) => {
                         console.log(user);
                         res.send(user);            
                     });            
             }
-
-        });
-});
-
+        );
 
 // login user 
 app.get('/account/login/:email/:password', function (req, res) {
@@ -48,11 +42,11 @@ app.get('/account/login/:email/:password', function (req, res) {
                     res.send(user[0]);
                 }
                 else{
-                    res.send('Login failed: wrong username or password');
+                    res.send({error:'Login failed: wrong password'});
                 }
             }
             else{
-                res.send('Login failed: user not found');
+                res.send({error:'Login failed: user not found'});
             }
     });
     
@@ -101,6 +95,12 @@ app.get('/account/all', function (req, res) {
     });
 });
 
-var port = 3000;
-app.listen(port);
-console.log('Running on port: ' + port);
+//var port = process.env.PORT || 3000;
+//app.listen(port, function () {
+   // console.log('Server is running on port: ' + port);
+
+const host = '0.0.0.0';
+const PORT = process.env.PORT || 3000;
+app.listen(PORT,host, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
