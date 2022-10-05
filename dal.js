@@ -2,8 +2,8 @@ require('dotenv').config();
 console.log(process.env);
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
-//const url ='mongodb://localhost:27017';
-const url=process.env.MONGODB_URI;
+const url ='mongodb://localhost:27017';
+//const url=process.env.MONGODB_URI;
 let db = null;
 
 MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function(err, client) {
