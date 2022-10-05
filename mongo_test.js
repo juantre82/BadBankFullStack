@@ -1,7 +1,8 @@
-const MongoClient = require('mongodb').MongoClient;
-const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017';
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://juantre82:1234Rush@bank-juan.b7uw5ab.mongodb.net/?retryWrites=true&w=majority";
 // connect to mongo
-MongoClient.connect(uri, {useUnifiedTopology: true}, function(err, client) {
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+client.connect(err=> {
   console.log("Connected successfully to server");
 
     // database Name
