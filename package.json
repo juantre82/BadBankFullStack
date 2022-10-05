@@ -4,8 +4,12 @@
   "description": "## Description This project was made to showcase everything I have learned while attending MIT xPro and to encapslate the learnings into one project.  This is a three tier application of a bank with very little security, although it does have a frontend that was built using JS, CSS, HTML, and React.JS. The Backend is compose with Node.js, Express, MongoDB, and Firebase.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "react-scripts start",
+    "start": "serve -s build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "",
