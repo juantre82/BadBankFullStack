@@ -2,13 +2,13 @@ const MongoClient = require('mongodb').MongoClient;
 const url         = 'mongodb://localhost:27017';
 let db            = null;
  
-// connect to mongo
-MongoClient.connect(url, {useUnifiedTopology: true}, function(err, client) {
-    console.log("Connected successfully to db server");
+MongoClient.connect(url, {useUnifiedTopology:true}, function(err, client) {
+    console.log('Connected to the db server');
 
-    // connect to fullstackBadBankDB database
-    db = client.db('badbank');
+    // connect to Badbank database
+    db = client.db('Badbank');
 });
+
 
 // create user account
 function create(name, email, password){
