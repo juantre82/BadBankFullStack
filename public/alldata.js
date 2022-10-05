@@ -1,22 +1,29 @@
-function AllData(){
-    const [data, setData] = React.useState([]);    
-
-    React.useEffect(() => {
-        
-        // fetch all accounts from API
-        fetch('/account/all')
-            .then(response => response.json())
-            .then(data => {
-                console.log(`all data: ${JSON.stringify(data)}`);
-                console.log(`data 0: ${JSON.stringify(data[0])}`);
-                console.log(`data 0 balance: ${JSON.stringify(data[0]["balance"])}`);
-                setData(JSON.stringify(data));
-            });
-
-    }, []);
-
-    return (<>
-        <h5>All Data in Store:</h5>
-        {data}
-    </>);
-}
+function AllData() {
+    const ctx = React.useContext(UserContext);
+    
+    return (
+    <Card
+      bgcolor="dark"
+      header="AllData"
+      body={ (  
+              <>
+              
+         
+                <p>       
+                Name: {JSON.stringify(ctx.users[0].name)}</p>
+                <p>
+                Email: {JSON.stringify(ctx.users[0].email)}</p>
+                <p>
+                Password: {JSON.stringify(ctx.users[0].password)}</p>
+                <p>
+                Balance: ${JSON.stringify(ctx.users[0].balance)}</p>
+             
+  
+              </>
+            
+              
+            )}
+    />
+           )
+  
+  }
