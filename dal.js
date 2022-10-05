@@ -1,5 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
-const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017';
+const uri = "mongodb+srv://juantre82:1234Juan@bank-juan.b7uw5ab.mongodb.net/?retryWrites=true&w=majority";
+//const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017';
 let db = null;
  
 // connect to mongo
