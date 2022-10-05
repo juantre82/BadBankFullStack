@@ -1,14 +1,13 @@
-const dotenv = require("dotenv");
-dotenv.config({path: "./.env"});
-const { MongoClient } = require("mongodb");
-const uri = process.env.MONGODB_URI;
-let db = null;
+const MongoClient = require('mongodb').MongoClient;
+const url         = 'mongodb://localhost:27017';
+let db            = null;
  
-MongoClient.connect(uri, {useUnifiedTopology:true}, function(err, client) {
-    console.log('Connected to the db server');
+// connect to mongo
+MongoClient.connect(url, {useUnifiedTopology: true}, function(err, client) {
+    console.log("Connected successfully to db server");
 
-    // connect to Badbank database
-    db = client.db('Badbank');
+    // connect to fullstackBadBankDB database
+    db = client.db('badbank');
 });
 
 // create user account
