@@ -1,15 +1,17 @@
-const MongoClient = require('mongodb').MongoClient;
-const url         = 'mongodb://localhost:27017';
-let db            = null;
- 
-// connect to mongo
-MongoClient.connect(url, {useUnifiedTopology: true}, function(err, client) {
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const url ='mongodb://localhost:27017';
+//const url=process.env.MONGO_DB_URI;
+let db = null;
+
+MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function(err, client) {
     console.log("Connected successfully to db server");
 
-    // connect to fullstackBadBankDB database
-    db = client.db('fullstackBadBankDB');
-    console.log('connceted to database')
+    // connect to my badbank database
+    db = client.db('badbank');
+    collection = db.collection("users");
 });
+
+
 
 // create user account
 function create(name, email, password){
