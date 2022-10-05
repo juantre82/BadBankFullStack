@@ -8,6 +8,7 @@ MongoClient.connect(url, {useUnifiedTopology: true}, function(err, client) {
 
     // connect to fullstackBadBankDB database
     db = client.db('fullstackBadBankDB');
+    console.log('connceted to database')
 });
 
 // create user account
