@@ -95,12 +95,7 @@ app.get('/account/all', function (req, res) {
     });
 });
 
-//var port = process.env.PORT || 3000;
-//app.listen(port, function () {
-   // console.log('Server is running on port: ' + port);
-
-const host = '0.0.0.0';
-var port = process.env.PORT || 8000;
-app.listen(PORT,host, () => {
-    console.log(`Our app is running on port ${ PORT }`);
+var port = process.env.PORT || 3000;
+app.listen(port, function () {
+ console.log('Server is running on port: ' + port);
 });
