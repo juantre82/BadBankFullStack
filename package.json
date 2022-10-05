@@ -17,6 +17,7 @@
     "firebase": "^9.10.0",
     "lowdb": "^3.0.0",
     "mongodb": "^4.10.0",
+    "node": "^18.10.0",
     "node.js": "^0.0.1-security"
   }
 }
