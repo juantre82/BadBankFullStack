@@ -1,0 +1,31 @@
+img{
+    margin-right: 16px;
+}
+body{
+    background-color: #343a40;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+#card{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    border-color: rgb(0, 0, 0);
+}
+
+.navbar {
+    border-bottom: solid 1px black;
+}
+
+.form-control{
+    border-color:rgb(0, 0, 0);
+}
+.card-header{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0,0,0)
+}
+.table{
+    color: white;
+}

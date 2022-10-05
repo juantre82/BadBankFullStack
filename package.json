@@ -1,0 +1,19 @@
+{
+  "name": "badbankfullstack",
+  "version": "1.0.0",
+  "description": "## Description This project was made to showcase everything I have learned while attending MIT xPro and to encapslate the learnings into one project.  This is a three tier application of a bank with very little security, although it does have a frontend that was built using JS, CSS, HTML, and React.JS. The Backend is compose with Node.js, Express, MongoDB, and Firebase.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase": "^9.10.0",
+    "lowdb": "^3.0.0",
+    "mongodb": "^4.10.0"
+  }
+}
