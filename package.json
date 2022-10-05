@@ -4,10 +4,12 @@
   "description": "## Description This project was made to showcase everything I have learned while attending MIT xPro and to encapslate the learnings into one project.  This is a three tier application of a bank with very little security, although it does have a frontend that was built using JS, CSS, HTML, and React.JS. The Backend is compose with Node.js, Express, MongoDB, and Firebase.",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
+    "build": "npm install",
     "start": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "juantre82@gmail.com",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
@@ -15,10 +17,9 @@
     "express": "^4.18.1",
     "firebase": "^9.10.0",
     "lowdb": "^3.0.0",
-    "mongodb": "^4.10.0",
+    "mongodb": "^3.7.3",
     "node": "^18.10.0",
     "node.js": "^0.0.1-security",
-    "nodemon": "^2.0.20",
-    "serve": "^14.0.1"
+    "nodemon": "^2.0.20"
   }
 }
