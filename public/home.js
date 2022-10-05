@@ -1,12 +1,12 @@
 function Home(){
-    return (
-      <Card
-        bgcolor="dark"
-        txtcolor="white"
-        header="BadBank Landing Module"
-        title="Welcome to the bank"
-        text="You can move around using the navigation bar."
-        body={(<img src="bank.png" className="img-fluid" alt="Responsive image"/>)}
-      />
-    );  
-  }
+  return (
+    <Card
+      bgcolor="dark"
+      txtcolor="black"
+      header="Welcome to the Bank"
+      title=""
+      text="Create an account, login to an existing account, deposit and withdraw funds, and check your balance!"
+      body={(<img src="bank.png" className="img-fluid" alt="Responsive image"/>)}
+    />
+  );  
+}
