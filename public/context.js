@@ -11,8 +11,7 @@ function Card(props){
   }
 
   return (
-    <div className="container" style={{padding: "20px", paddingTop: "50px"}}>
-      <div className={classes()}>
+    <div id="card" className={classes()} style={{maxWidth: "20rem"}}>
         <div className="card-header">{props.header}</div>
         <div className="card-body">
           {props.title && (<h5 className="card-title">{props.title}</h5>)}
@@ -21,6 +20,5 @@ function Card(props){
           {props.status && (<div id='createStatus'>{props.status}</div>)}
         </div>
       </div> 
-    </div>
   );    
 }
