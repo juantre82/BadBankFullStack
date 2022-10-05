@@ -2,6 +2,7 @@ var express = require('express');
 var app     = express();
 var cors    = require('cors');
 let mongodb = require('mongodb');
+const e = require('express');
 
 
 //require('dotenv').config();
@@ -95,7 +96,5 @@ app.get('/account/all', function (req, res) {
     });
 });
 
-var port = process.env.PORT || 3000;
-app.listen(port, function () {
- console.log('Server is running on port: ' + port);
-});
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
