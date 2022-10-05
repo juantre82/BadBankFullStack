@@ -1,13 +1,16 @@
+require('dotenv').config();
+console.log(process.env);
+
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const url ='mongodb://localhost:27017';
-//const url=process.env.MONGO_DB_URI;
+//const url ='mongodb://localhost:27017';
+const url=process.env.MONGODB_URI;
 let db = null;
 
 MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function(err, client) {
     console.log("Connected successfully to db server");
 
     // connect to my badbank database
-    db = client.db('badbank');
+    db = client.db('fullstackBadBankDB');
     collection = db.collection("users");
 });
 
