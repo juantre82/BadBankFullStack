@@ -12,6 +12,7 @@ COPY dal.js       /app/dal.js
 COPY public/index.html        /app/public/index.html 
 COPY public/context.js        /app/public/context.js
 COPY public/createaccount.js  /app/public/createaccount.js
+COPY public/balance.js        /app/public/balance.js
 COPY public/deposit.js        /app/public/deposit.js   
 COPY public/home.js           /app/public/home.js 
 COPY public/index.js          /app/public/index.js  
