@@ -1,9 +1,6 @@
-require('dotenv').config();
-console.log(process.env);
+const MongoClient = require('mongodb').MongoClient;
+const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017';
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const url ='mongodb://localhost:27017';
-//const url=process.env.MONGODB_URI;
 let db = null;
 
 MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function(err, client) {
@@ -11,8 +8,7 @@ MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, fu
 
     // connect to my badbank database
   
-    db = client.db('myproject');
-    collection = db.collection("users");
+    db = client.db('fullstackBadBankDB');
 });
 
 
