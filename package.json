@@ -10,7 +10,6 @@
     "server": "nodemon index.js",
     "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
-    
   },
   "keywords": [],
   "author": "juantre82@gmail.com",
@@ -22,6 +21,7 @@
     "firebase": "^9.10.0",
     "lowdb": "^3.0.0",
     "mongodb": "^3.7.3",
+    "mongoose": "^6.6.5",
     "node": "^18.10.0",
     "node.js": "^0.0.1-security",
     "nodemon": "^2.0.20"
